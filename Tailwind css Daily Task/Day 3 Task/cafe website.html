@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Velvet Brew — Premium Coffee</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              50: "#f8f3ed",
+              100: "#eadfd2",
+              200: "#d6c0aa",
+              300: "#b99878",
+              400: "#9a704f",
+              500: "#795237",
+              600: "#603f2a",
+              700: "#4b3022",
+              800: "#362218",
+              900: "#24150f"
+            }
+          },
+          fontFamily: {
+            display: ["Georgia", "serif"]
+          },
+          boxShadow: {
+            coffee: "0 25px 80px rgba(0,0,0,.35)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #120b08;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at 75% 40%, rgba(150, 100, 60, .25), transparent 30%),
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, .06), transparent 25%),
+        linear-gradient(135deg, #120b08 0%, #24150f 50%, #3b2418 100%);
+    }
+
+    .coffee-glow {
+      box-shadow:
+        0 0 40px rgba(190, 125, 70, .2),
+        0 25px 80px rgba(0, 0, 0, .5);
+    }
+
+    .glass {
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #d6a26e, #f5d2a5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .coffee-bean {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+
+    .steam {
+      animation: steam 3s ease-in-out infinite;
+    }
+
+    @keyframes steam {
+      0%, 100% {
+        transform: translateY(5px);
+        opacity: .15;
+      }
+      50% {
+        transform: translateY(-15px);
+        opacity: .6;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="fixed top-0 left-0 right-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 py-5">
+
+    <div class="glass rounded-full px-6 py-4 flex items-center justify-between">
+
+      <a href="#" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full bg-coffee-500 flex items-center justify-center text-xl">
+          ☕
+        </span>
+
+        <span class="font-bold text-xl tracking-wide">
+          Velvet<span class="text-coffee-300">Brew</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <a href="#home" class="hover:text-white transition">Home</a>
+        <a href="#menu" class="hover:text-white transition">Menu</a>
+        <a href="#story" class="hover:text-white transition">Our Story</a>
+        <a href="#reviews" class="hover:text-white transition">Reviews</a>
+      </div>
+
+      <a
+        href="#menu"
+        class="hidden sm:block bg-coffee-400 hover:bg-coffee-300
+               text-white px-6 py-3 rounded-full font-semibold
+               transition duration-300"
+      >
+        Order Coffee
+      </a>
+
+      <button class="md:hidden text-2xl">
+        ☰
+      </button>
+
+    </div>
+  </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section id="home" class="hero-bg min-h-screen flex items-center pt-28">
+
+  <div class="max-w-7xl mx-auto px-6 w-full">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Hero Text -->
+
+      <div>
+
+        <div class="inline-flex items-center gap-2 glass
+                    px-4 py-2 rounded-full text-sm text-coffee-200 mb-7">
+
+          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+
+          Freshly roasted every morning
+        </div>
+
+        <h1 class="font-display text-6xl md:text-7xl lg:text-8xl
+                   leading-[.95] font-bold">
+
+          Coffee that
+          <span class="gradient-text">
+            feels like home.
+          </span>
+
+        </h1>
+
+        <p class="text-gray-400 text-lg leading-relaxed max-w-xl mt-8">
+
+          Discover handcrafted coffee made from ethically sourced beans,
+          roasted with passion and served with a little bit of magic.
+
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10">
+
+          <a
+            href="#menu"
+            class="bg-coffee-400 hover:bg-coffee-300
+                   px-8 py-4 rounded-full font-semibold
+                   transition hover:scale-105"
+          >
+            Explore Menu →
+          </a>
+
+          <a
+            href="#story"
+            class="glass px-8 py-4 rounded-full
+                   font-semibold hover:bg-white/10 transition"
+          >
+            Our Story
+          </a>
+
+        </div>
+
+        <!-- Stats -->
+
+        <div class="flex gap-10 mt-14">
+
+          <div>
+            <h3 class="text-3xl font-bold">12+</h3>
+            <p class="text-gray-500 text-sm mt-1">
+              Coffee Blends
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold">25k+</h3>
+            <p class="text-gray-500 text-sm mt-1">
+              Happy Customers
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold">4.9</h3>
+            <p class="text-gray-500 text-sm mt-1">
+              Customer Rating
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Coffee Visual -->
+
+      <div class="relative flex justify-center items-center">
+
+        <!-- Glow -->
+
+        <div class="absolute w-80 h-80 bg-coffee-400/20
+                    rounded-full blur-3xl">
+        </div>
+
+        <!-- Cup -->
+
+        <div class="relative z-10">
+
+          <div class="steam absolute -top-24 left-20
+                      text-7xl text-white/30">
+            〰
+          </div>
+
+          <div class="steam absolute -top-28 left-36
+                      text-6xl text-white/20">
+            〰
+          </div>
+
+          <div class="w-72 h-72 md:w-96 md:h-96
+                      rounded-full
+                      bg-gradient-to-br
+                      from-coffee-300/30
+                      to-coffee-900
+                      flex items-center justify-center
+                      coffee-glow">
+
+            <div class="w-48 h-48 md:w-64 md:h-64
+                        rounded-full bg-gradient-to-br
+                        from-white/10 to-black/30
+                        flex items-center justify-center">
+
+              <div class="text-9xl md:text-[150px] coffee-bean">
+                ☕
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Floating Bean Cards -->
+
+        <div class="absolute top-5 right-5 glass
+                    rounded-2xl p-4 coffee-bean">
+
+          <div class="text-2xl">🫘</div>
+
+          <p class="text-xs text-gray-400 mt-2">
+            100% Arabica
+          </p>
+
+        </div>
+
+        <div class="absolute bottom-10 left-0 glass
+                    rounded-2xl p-4">
+
+          <div class="flex items-center gap-3">
+
+            <div class="text-2xl">
+              ⭐
+            </div>
+
+            <div>
+              <p class="font-bold">4.9/5</p>
+              <p class="text-xs text-gray-400">
+                2,400+ reviews
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section id="menu" class="bg-[#0d0806] py-28">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex flex-col md:flex-row
+                justify-between md:items-end gap-6 mb-14">
+
+      <div>
+
+        <p class="text-coffee-300 uppercase tracking-[.3em]
+                  text-sm font-semibold">
+          Our Favorites
+        </p>
+
+        <h2 class="font-display text-5xl md:text-6xl
+                   font-bold mt-3">
+          Crafted for coffee lovers.
+        </h2>
+
+      </div>
+
+      <a href="#"
+         class="text-coffee-300 hover:text-white transition">
+        View full menu →
+      </a>
+
+    </div>
+
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+
+      <!-- Card 1 -->
+
+      <article class="group glass rounded-3xl overflow-hidden
+                      hover:-translate-y-3 transition duration-500">
+
+        <div class="h-72 bg-gradient-to-br
+                    from-[#6e472d] to-[#1e110b]
+                    flex items-center justify-center">
+
+          <div class="text-9xl group-hover:scale-110
+                      transition duration-500">
+            ☕
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <div class="flex justify-between items-start">
+
+            <div>
+              <p class="text-xs uppercase tracking-widest
+                        text-coffee-300">
+                Signature
+              </p>
+
+              <h3 class="text-2xl font-bold mt-2">
+                Velvet Cappuccino
+              </h3>
+            </div>
+
+            <span class="text-xl font-bold text-coffee-300">
+              $5.50
+            </span>
+
+          </div>
+
+          <p class="text-gray-500 mt-4 leading-relaxed">
+            Double espresso, silky steamed milk and a thick
+            layer of creamy foam.
+          </p>
+
+          <button
+            class="mt-6 w-full py-3 rounded-full
+                   bg-white/5 hover:bg-coffee-500
+                   transition font-semibold">
+            Add to order +
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- Card 2 -->
+
+      <article class="group glass rounded-3xl overflow-hidden
+                      hover:-translate-y-3 transition duration-500">
+
+        <div class="h-72 bg-gradient-to-br
+                    from-[#b9784f] to-[#30180e]
+                    flex items-center justify-center">
+
+          <div class="text-9xl group-hover:scale-110
+                      transition duration-500">
+            🥤
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <div class="flex justify-between items-start">
+
+            <div>
+              <p class="text-xs uppercase tracking-widest
+                        text-coffee-300">
+                Cold Brew
+              </p>
+
+              <h3 class="text-2xl font-bold mt-2">
+                Caramel Cold Brew
+              </h3>
+            </div>
+
+            <span class="text-xl font-bold text-coffee-300">
+              $6.00
+            </span>
+
+          </div>
+
+          <p class="text-gray-500 mt-4 leading-relaxed">
+            Slow-steeped cold brew with caramel sweetness
+            and smooth vanilla notes.
+          </p>
+
+          <button
+            class="mt-6 w-full py-3 rounded-full
+                   bg-white/5 hover:bg-coffee-500
+                   transition font-semibold">
+            Add to order +
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- Card 3 -->
+
+      <article class="group glass rounded-3xl overflow-hidden
+                      hover:-translate-y-3 transition duration-500">
+
+        <div class="h-72 bg-gradient-to-br
+                    from-[#4d3426] to-[#160c08]
+                    flex items-center justify-center">
+
+          <div class="text-9xl group-hover:scale-110
+                      transition duration-500">
+            🍵
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <div class="flex justify-between items-start">
+
+            <div>
+              <p class="text-xs uppercase tracking-widest
+                        text-coffee-300">
+                Special
+              </p>
+
+              <h3 class="text-2xl font-bold mt-2">
+                Mocha Dream
+              </h3>
+            </div>
+
+            <span class="text-xl font-bold text-coffee-300">
+              $6.50
+            </span>
+
+          </div>
+
+          <p class="text-gray-500 mt-4 leading-relaxed">
+            Rich espresso blended with dark chocolate,
+            steamed milk and cocoa.
+          </p>
+
+          <button
+            class="mt-6 w-full py-3 rounded-full
+                   bg-white/5 hover:bg-coffee-500
+                   transition font-semibold">
+            Add to order +
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section id="story" class="py-28 bg-coffee-900">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <div class="relative">
+
+        <div class="rounded-[2rem] overflow-hidden
+                    bg-gradient-to-br from-coffee-500
+                    to-black aspect-square
+                    flex items-center justify-center">
+
+          <span class="text-[180px]">
+            🌱
+          </span>
+
+        </div>
+
+        <div class="absolute -bottom-8 -right-8
+                    glass rounded-2xl p-6">
+
+          <p class="text-3xl font-bold">2014</p>
+
+          <p class="text-gray-400 text-sm mt-1">
+            Since the beginning
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <p class="text-coffee-300 uppercase tracking-[.3em]
+                  text-sm font-semibold">
+          Our Story
+        </p>
+
+        <h2 class="font-display text-5xl md:text-6xl
+                   font-bold mt-4">
+          More than coffee.
+          <span class="text-coffee-300">
+            It's a ritual.
+          </span>
+        </h2>
+
+        <p class="text-gray-400 leading-relaxed mt-7">
+          Velvet Brew started with a simple idea:
+          coffee should slow you down, even if only for
+          five minutes.
+        </p>
+
+        <p class="text-gray-400 leading-relaxed mt-5">
+          We work directly with small farms, roast our beans
+          in small batches and obsess over every detail
+          between the bean and your cup.
+        </p>
+
+        <div class="grid grid-cols-2 gap-6 mt-10">
+
+          <div>
+            <h3 class="text-3xl font-bold text-coffee-300">
+              18
+            </h3>
+            <p class="text-gray-500 mt-1">
+              Farm Partners
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-coffee-300">
+              100%
+            </h3>
+            <p class="text-gray-500 mt-1">
+              Ethically Sourced
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews" class="bg-[#0d0806] py-28">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <p class="text-coffee-300 uppercase tracking-[.3em]
+              text-sm font-semibold">
+      Customer Love
+    </p>
+
+    <h2 class="font-display text-5xl font-bold mt-3">
+      What our customers say
+    </h2>
+
+
+    <div class="grid md:grid-cols-3 gap-7 mt-14 text-left">
+
+
+      <div class="glass rounded-3xl p-8">
+
+        <div class="text-yellow-400 text-lg">
+          ★★★★★
+        </div>
+
+        <p class="text-gray-300 leading-relaxed mt-5">
+          “The best cappuccino I've had in years.
+          The atmosphere is just as beautiful as the coffee.”
+        </p>
+
+        <div class="flex items-center gap-3 mt-7">
+
+          <div class="w-11 h-11 rounded-full
+                      bg-coffee-500 flex items-center justify-center">
+            A
+          </div>
+
+          <div>
+            <p class="font-semibold">Alex Morgan</p>
+            <p class="text-xs text-gray-500">
+              Coffee enthusiast
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="glass rounded-3xl p-8">
+
+        <div class="text-yellow-400 text-lg">
+          ★★★★★
+        </div>
+
+        <p class="text-gray-300 leading-relaxed mt-5">
+          “Beautiful place, amazing cold brew and
+          genuinely friendly people. I keep coming back.”
+        </p>
+
+        <div class="flex items-center gap-3 mt-7">
+
+          <div class="w-11 h-11 rounded-full
+                      bg-coffee-500 flex items-center justify-center">
+            S
+          </div>
+
+          <div>
+            <p class="font-semibold">Sophia Lee</p>
+            <p class="text-xs text-gray-500">
+              Regular customer
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="glass rounded-3xl p-8">
+
+        <div class="text-yellow-400 text-lg">
+          ★★★★★
+        </div>
+
+        <p class="text-gray-300 leading-relaxed mt-5">
+          “The mocha is incredible. Velvet Brew has
+          officially become my favorite coffee spot.”
+        </p>
+
+        <div class="flex items-center gap-3 mt-7">
+
+          <div class="w-11 h-11 rounded-full
+                      bg-coffee-500 flex items-center justify-center">
+            J
+          </div>
+
+          <div>
+            <p class="font-semibold">James Carter</p>
+            <p class="text-xs text-gray-500">
+              Local guide
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="py-28 bg-gradient-to-br
+                from-coffee-700 to-coffee-900">
+
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <span class="text-5xl">
+      ☕
+    </span>
+
+    <h2 class="font-display text-5xl md:text-6xl
+               font-bold mt-6">
+      Your next favorite cup
+      is waiting.
+    </h2>
+
+    <p class="text-gray-300 mt-5">
+      Get coffee stories, special offers and new blends
+      delivered straight to your inbox.
+    </p>
+
+    <form class="max-w-xl mx-auto mt-9 flex
+                 flex-col sm:flex-row gap-3">
+
+      <input
+        type="email"
+        placeholder="Your email address"
+        class="flex-1 bg-white/10 border border-white/10
+               rounded-full px-6 py-4 outline-none
+               placeholder:text-gray-400
+               focus:border-coffee-300"
+      />
+
+      <button
+        class="bg-white text-coffee-900
+               px-8 py-4 rounded-full font-bold
+               hover:bg-coffee-100 transition">
+        Subscribe
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-black py-12">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex flex-col md:flex-row
+                justify-between gap-8">
+
+      <div>
+
+        <div class="flex items-center gap-3">
+
+          <span class="w-10 h-10 rounded-full
+                       bg-coffee-500 flex items-center
+                       justify-center">
+            ☕
+          </span>
+
+          <span class="text-xl font-bold">
+            Velvet<span class="text-coffee-300">Brew</span>
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 max-w-sm mt-4">
+          Premium coffee, thoughtfully sourced,
+          carefully roasted and made for slow moments.
+        </p>
+
+      </div>
+
+
+      <div class="flex gap-12 text-sm">
+
+        <div>
+          <h4 class="font-bold mb-4">Explore</h4>
+
+          <div class="space-y-3 text-gray-500">
+            <a href="#home" class="block hover:text-white">
+              Home
+            </a>
+
+            <a href="#menu" class="block hover:text-white">
+              Menu
+            </a>
+
+            <a href="#story" class="block hover:text-white">
+              Our Story
+            </a>
+          </div>
+        </div>
+
+
+        <div>
+          <h4 class="font-bold mb-4">Follow</h4>
+
+          <div class="space-y-3 text-gray-500">
+            <a href="#" class="block hover:text-white">
+              Instagram
+            </a>
+
+            <a href="#" class="block hover:text-white">
+              Facebook
+            </a>
+
+            <a href="#" class="block hover:text-white">
+              Twitter
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 mt-10 pt-6
+                text-center text-sm text-gray-600">
+
+      © 2026 Velvet Brew. Crafted with ☕ and passion.
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
