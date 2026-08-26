@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Scooply | Happiness in Every Scoop</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .logo-font {
+      font-family: "Pacifico", cursive;
+    }
+
+    .hero-shape {
+      border-radius: 48% 52% 42% 58% / 55% 45% 55% 45%;
+    }
+
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .product-card {
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .product-card img {
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+
+<body class="bg-orange-50 text-gray-800">
+
+  <!-- ================= ANNOUNCEMENT BAR ================= -->
+
+  <div class="bg-pink-600 text-white text-center text-sm py-2 px-4">
+    🍦 Free delivery on orders above ₹499
+    <span class="hidden sm:inline"> • </span>
+    <span class="hidden sm:inline">Freshly made happiness is on the way!</span>
+  </div>
+
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
+
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <div class="h-20 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2">
+          <div class="w-11 h-11 rounded-full bg-pink-100 flex items-center justify-center">
+            <i class="fa-solid fa-ice-cream text-pink-600 text-xl"></i>
+          </div>
+
+          <span class="logo-font text-2xl text-pink-600">
+            Scooply
+          </span>
+        </a>
+
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+
+          <a href="#home" class="hover:text-pink-600 transition">
+            Home
+          </a>
+
+          <a href="#flavours" class="hover:text-pink-600 transition">
+            Flavours
+          </a>
+
+          <a href="#offers" class="hover:text-pink-600 transition">
+            Offers
+          </a>
+
+          <a href="#about" class="hover:text-pink-600 transition">
+            About
+          </a>
+
+          <a href="#reviews" class="hover:text-pink-600 transition">
+            Reviews
+          </a>
+
+        </div>
+
+
+        <!-- Navbar Actions -->
+        <div class="hidden md:flex items-center gap-4">
+
+          <button
+            class="w-10 h-10 rounded-full hover:bg-pink-50 transition"
+            title="Search"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button
+            onclick="showCart()"
+            class="relative w-10 h-10 rounded-full hover:bg-pink-50 transition"
+            title="Cart"
+          >
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span
+              id="cartCount"
+              class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-pink-600 text-white text-xs flex items-center justify-center"
+            >
+              0
+            </span>
+          </button>
+
+          <a
+            href="#flavours"
+            class="bg-pink-600 text-white px-5 py-2.5 rounded-full hover:bg-pink-700 transition"
+          >
+            Order Now
+          </a>
+
+        </div>
+
+
+        <!-- Mobile Button -->
+        <button
+          id="menuButton"
+          class="md:hidden text-xl"
+          aria-label="Open menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden pb-5 border-t border-gray-100"
+      >
+
+        <div class="flex flex-col gap-4 pt-5 font-medium">
+
+          <a href="#home" class="mobile-link">
+            Home
+          </a>
+
+          <a href="#flavours" class="mobile-link">
+            Flavours
+          </a>
+
+          <a href="#offers" class="mobile-link">
+            Offers
+          </a>
+
+          <a href="#about" class="mobile-link">
+            About
+          </a>
+
+          <a href="#reviews" class="mobile-link">
+            Reviews
+          </a>
+
+          <a
+            href="#flavours"
+            class="bg-pink-600 text-white text-center py-3 rounded-full"
+          >
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section
+      id="home"
+      class="relative overflow-hidden"
+    >
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="min-h-[680px] grid lg:grid-cols-2 items-center gap-12 py-16">
+
+          <!-- Hero Content -->
+
+          <div class="fade-up">
+
+            <div
+              class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-sm font-semibold text-pink-600 mb-6"
+            >
+              <span>🍓</span>
+              Made with real ingredients
+            </div>
+
+            <h1
+              class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-gray-900"
+            >
+              Happiness
+              <span class="text-pink-600">in every</span>
+              scoop.
+            </h1>
+
+            <p
+              class="mt-6 text-lg text-gray-600 max-w-xl leading-8"
+            >
+              Creamy, dreamy and made to make your day a little sweeter.
+              Discover your next favourite flavour at Scooply.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-8">
+
+              <a
+                href="#flavours"
+                class="bg-pink-600 text-white px-7 py-3.5 rounded-full font-semibold hover:bg-pink-700 hover:shadow-lg transition"
+              >
+                Explore Flavours
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+
+              <a
+                href="#offers"
+                class="bg-white border border-gray-200 px-7 py-3.5 rounded-full font-semibold hover:border-pink-300 hover:text-pink-600 transition"
+              >
+                Today's Special
+              </a>
+
+            </div>
+
+
+            <!-- Small Stats -->
+
+            <div class="flex gap-8 mt-10">
+
+              <div>
+                <h3 class="text-2xl font-bold">
+                  25+
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                  Flavours
+                </p>
+              </div>
+
+              <div class="w-px bg-gray-300"></div>
+
+              <div>
+                <h3 class="text-2xl font-bold">
+                  4.9/5
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                  Customer rating
+                </p>
+              </div>
+
+              <div class="w-px bg-gray-300"></div>
+
+              <div>
+                <h3 class="text-2xl font-bold">
+                  10K+
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                  Happy scoops
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Hero Image -->
+
+          <div class="relative flex justify-center">
+
+            <div
+              class="absolute w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] bg-pink-200 hero-shape"
+            ></div>
+
+            <div
+              class="absolute -top-4 right-5 sm:right-12 bg-white rounded-2xl shadow-lg px-4 py-3 rotate-6"
+            >
+              <p class="text-xs text-gray-500">
+                Customer favourite
+              </p>
+
+              <p class="font-bold text-pink-600">
+                🍓 Berry Bliss
+              </p>
+            </div>
+
+            <img
+              src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85"
+              alt="Strawberry ice cream"
+              class="relative z-10 w-[360px] sm:w-[480px] lg:w-[530px] h-[500px] object-cover rounded-[45%] shadow-2xl float-animation"
+            >
+
+            <div
+              class="absolute bottom-5 left-3 sm:left-10 z-20 bg-white rounded-2xl shadow-xl px-5 py-4"
+            >
+              <p class="text-sm text-gray-500">
+                Starting from
+              </p>
+
+              <p class="text-2xl font-bold text-gray-900">
+                ₹99
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FLAVOURS ================= -->
+
+    <section
+      id="flavours"
+      class="bg-white py-20"
+    >
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="text-center max-w-2xl mx-auto">
+
+          <p class="text-pink-600 font-bold uppercase tracking-widest text-sm">
+            Our favourites
+          </p>
+
+          <h2 class="text-4xl sm:text-5xl font-bold mt-3 text-gray-900">
+            Pick your perfect scoop
+          </h2>
+
+          <p class="text-gray-500 mt-4">
+            From timeless classics to flavours with a little twist,
+            there is something delicious waiting for everyone.
+          </p>
+
+        </div>
+
+
+        <!-- Category Buttons -->
+
+        <div class="flex justify-center flex-wrap gap-3 mt-10">
+
+          <button
+            onclick="filterProducts('all', this)"
+            class="filter-btn bg-pink-600 text-white px-5 py-2 rounded-full"
+          >
+            All
+          </button>
+
+          <button
+            onclick="filterProducts('classic', this)"
+            class="filter-btn bg-pink-50 text-pink-600 px-5 py-2 rounded-full"
+          >
+            Classics
+          </button>
+
+          <button
+            onclick="filterProducts('fruit', this)"
+            class="filter-btn bg-pink-50 text-pink-600 px-5 py-2 rounded-full"
+          >
+            Fruity
+          </button>
+
+          <button
+            onclick="filterProducts('special', this)"
+            class="filter-btn bg-pink-50 text-pink-600 px-5 py-2 rounded-full"
+          >
+            Specials
+          </button>
+
+        </div>
+
+
+        <!-- Product Grid -->
+
+        <div
+          id="productGrid"
+          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12"
+        >
+
+          <!-- Product 1 -->
+
+          <article
+            class="product-card bg-orange-50 rounded-3xl overflow-hidden border border-orange-100"
+            data-category="classic"
+          >
+
+            <div class="h-64 overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=80"
+                alt="Vanilla ice cream"
+                class="w-full h-full object-cover"
+              >
+
+            </div>
+
+            <div class="p-5">
+
+              <div class="flex justify-between items-start">
+
+                <div>
+
+                  <h3 class="font-bold text-xl">
+                    Vanilla Cloud
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Classic vanilla
+                  </p>
+
+                </div>
+
+                <span class="font-bold text-pink-600">
+                  ₹99
+                </span>
+
+              </div>
+
+              <div class="flex items-center gap-1 text-yellow-500 text-sm mt-4">
+                ★★★★★
+              </div>
+
+              <button
+                onclick="addToCart('Vanilla Cloud')"
+                class="w-full mt-4 bg-gray-900 text-white py-3 rounded-xl hover:bg-pink-600 transition"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- Product 2 -->
+
+          <article
+            class="product-card bg-orange-50 rounded-3xl overflow-hidden border border-orange-100"
+            data-category="fruit"
+          >
+
+            <div class="h-64 overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80"
+                alt="Strawberry ice cream"
+                class="w-full h-full object-cover"
+              >
+
+            </div>
+
+            <div class="p-5">
+
+              <div class="flex justify-between items-start">
+
+                <div>
+
+                  <h3 class="font-bold text-xl">
+                    Berry Bliss
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Strawberry cream
+                  </p>
+
+                </div>
+
+                <span class="font-bold text-pink-600">
+                  ₹119
+                </span>
+
+              </div>
+
+              <div class="flex items-center gap-1 text-yellow-500 text-sm mt-4">
+                ★★★★★
+              </div>
+
+              <button
+                onclick="addToCart('Berry Bliss')"
+                class="w-full mt-4 bg-gray-900 text-white py-3 rounded-xl hover:bg-pink-600 transition"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- Product 3 -->
+
+          <article
+            class="product-card bg-orange-50 rounded-3xl overflow-hidden border border-orange-100"
+            data-category="classic"
+          >
+
+            <div class="h-64 overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=700&q=80"
+                alt="Chocolate ice cream"
+                class="w-full h-full object-cover"
+              >
+
+            </div>
+
+            <div class="p-5">
+
+              <div class="flex justify-between items-start">
+
+                <div>
+
+                  <h3 class="font-bold text-xl">
+                    Choco Dream
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Belgian chocolate
+                  </p>
+
+                </div>
+
+                <span class="font-bold text-pink-600">
+                  ₹129
+                </span>
+
+              </div>
+
+              <div class="flex items-center gap-1 text-yellow-500 text-sm mt-4">
+                ★★★★★
+              </div>
+
+              <button
+                onclick="addToCart('Choco Dream')"
+                class="w-full mt-4 bg-gray-900 text-white py-3 rounded-xl hover:bg-pink-600 transition"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- Product 4 -->
+
+          <article
+            class="product-card bg-orange-50 rounded-3xl overflow-hidden border border-orange-100"
+            data-category="special"
+          >
+
+            <div class="h-64 overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=700&q=80"
+                alt="Ice cream sundae"
+                class="w-full h-full object-cover"
+              >
+
+            </div>
+
+            <div class="p-5">
+
+              <div class="flex justify-between items-start">
+
+                <div>
+
+                  <h3 class="font-bold text-xl">
+                    Sundae Party
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Triple scoop special
+                  </p>
+
+                </div>
+
+                <span class="font-bold text-pink-600">
+                  ₹199
+                </span>
+
+              </div>
+
+              <div class="flex items-center gap-1 text-yellow-500 text-sm mt-4">
+                ★★★★★
+              </div>
+
+              <button
+                onclick="addToCart('Sundae Party')"
+                class="w-full mt-4 bg-gray-900 text-white py-3 rounded-xl hover:bg-pink-600 transition"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= OFFER ================= -->
+
+    <section
+      id="offers"
+      class="py-20"
+    >
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div
+          class="relative overflow-hidden rounded-[2rem] bg-pink-600 text-white p-8 sm:p-12 lg:p-16"
+        >
+
+          <div class="relative z-10 max-w-xl">
+
+            <span
+              class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold"
+            >
+              LIMITED TIME OFFER
+            </span>
+
+            <h2 class="text-4xl sm:text-5xl font-bold mt-5">
+              Scoop more.
+              <br>
+              Pay less.
+            </h2>
+
+            <p class="mt-5 text-pink-100 text-lg">
+              Get 20% off when you order any four scoops.
+              Perfect excuse for sharing... or not.
+            </p>
+
+            <button
+              onclick="showOffer()"
+              class="mt-8 bg-white text-pink-600 px-7 py-3.5 rounded-full font-bold hover:bg-pink-50 transition"
+            >
+              Grab the Offer
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+
+          </div>
+
+
+          <!-- Decorative circles -->
+
+          <div
+            class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-pink-500"
+          ></div>
+
+          <div
+            class="absolute -right-10 bottom-[-100px] w-72 h-72 rounded-full bg-pink-700"
+          ></div>
+
+          <div
+            class="absolute right-20 top-12 text-8xl hidden sm:block float-animation"
+          >
+            🍦
+          </div>
+
+          <div
+            class="absolute right-48 bottom-10 text-6xl hidden sm:block"
+          >
+            🍓
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= WHY US ================= -->
+
+    <section
+      id="about"
+      class="bg-white py-20"
+    >
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+          <!-- Image -->
+
+          <div class="relative">
+
+            <img
+              src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1000&q=85"
+              alt="Ice cream shop"
+              class="rounded-[2rem] w-full h-[500px] object-cover"
+            >
+
+            <div
+              class="absolute -bottom-6 -right-4 sm:right-8 bg-white p-5 rounded-2xl shadow-xl"
+            >
+
+              <p class="text-3xl font-bold text-pink-600">
+                100%
+              </p>
+
+              <p class="text-sm text-gray-500">
+                Fresh ingredients
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- Content -->
+
+          <div>
+
+            <p class="text-pink-600 font-bold uppercase tracking-widest text-sm">
+              Why Scooply?
+            </p>
+
+            <h2 class="text-4xl sm:text-5xl font-bold mt-3 text-gray-900">
+              Good ingredients.
+              <span class="text-pink-600">
+                Great memories.
+              </span>
+            </h2>
+
+            <p class="text-gray-500 mt-5 leading-7">
+              We believe ice cream should taste as good as the memories
+              you make while eating it. That's why every Scooply flavour
+              starts with quality ingredients and a lot of care.
+            </p>
+
+
+            <div class="grid sm:grid-cols-2 gap-6 mt-8">
+
+              <div class="flex gap-4">
+
+                <div
+                  class="w-12 h-12 shrink-0 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Real Ingredients
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    No shortcuts. Just delicious ingredients.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="flex gap-4">
+
+                <div
+                  class="w-12 h-12 shrink-0 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Made With Love
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Every batch gets our full attention.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="flex gap-4">
+
+                <div
+                  class="w-12 h-12 shrink-0 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-snowflake"></i>
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Super Fresh
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Freshness you can taste in every bite.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="flex gap-4">
+
+                <div
+                  class="w-12 h-12 shrink-0 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-face-smile"></i>
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Made To Smile
+                  </h3>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Because dessert should be fun.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= REVIEWS ================= -->
+
+    <section
+      id="reviews"
+      class="py-20 bg-orange-50"
+    >
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="text-center">
+
+          <p class="text-pink-600 font-bold uppercase tracking-widest text-sm">
+            Sweet words
+          </p>
+
+          <h2 class="text-4xl sm:text-5xl font-bold mt-3">
+            People love Scooply
+          </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+
+          <!-- Review 1 -->
+
+          <div class="bg-white rounded-3xl p-7 shadow-sm">
+
+            <div class="text-yellow-400">
+              ★★★★★
+            </div>
+
+            <p class="text-gray-600 mt-5 leading-7">
+              “The chocolate flavour is honestly addictive.
+              Super creamy and not overly sweet. Definitely ordering again!”
+            </p>
+
+            <div class="flex items-center gap-3 mt-6">
+
+              <div
+                class="w-11 h-11 bg-pink-100 rounded-full flex items-center justify-center"
+              >
+                👩
+              </div>
+
+              <div>
+                <h4 class="font-bold">
+                  Ananya
+                </h4>
+
+                <p class="text-xs text-gray-500">
+                  Chennai
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Review 2 -->
+
+          <div class="bg-white rounded-3xl p-7 shadow-sm">
+
+            <div class="text-yellow-400">
+              ★★★★★
+            </div>
+
+            <p class="text-gray-600 mt-5 leading-7">
+              “Berry Bliss is my new favourite.
+              The strawberry taste feels really fresh and the packaging was cute!”
+            </p>
+
+            <div class="flex items-center gap-3 mt-6">
+
+              <div
+                class="w-11 h-11 bg-pink-100 rounded-full flex items-center justify-center"
+              >
+                👨
+              </div>
+
+              <div>
+                <h4 class="font-bold">
+                  Arjun
+                </h4>
+
+                <p class="text-xs text-gray-500">
+                  Bengaluru
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Review 3 -->
+
+          <div class="bg-white rounded-3xl p-7 shadow-sm">
+
+            <div class="text-yellow-400">
+              ★★★★★
+            </div>
+
+            <p class="text-gray-600 mt-5 leading-7">
+              “Ordered the Sundae Party for my family.
+              Everyone loved it. The portions were generous too!”
+            </p>
+
+            <div class="flex items-center gap-3 mt-6">
+
+              <div
+                class="w-11 h-11 bg-pink-100 rounded-full flex items-center justify-center"
+              >
+                👩
+              </div>
+
+              <div>
+                <h4 class="font-bold">
+                  Priya
+                </h4>
+
+                <p class="text-xs text-gray-500">
+                  Coimbatore
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section class="py-20 bg-white">
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="text-center">
+
+          <p class="text-pink-600 font-bold uppercase tracking-widest text-sm">
+            Sweet moments
+          </p>
+
+          <h2 class="text-4xl sm:text-5xl font-bold mt-3">
+            A little scoop of joy
+          </h2>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+
+          <img
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=80"
+            alt="Ice cream"
+            class="w-full h-56 object-cover rounded-2xl hover:scale-[1.02] transition"
+          >
+
+          <img
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80"
+            alt="Strawberry dessert"
+            class="w-full h-56 object-cover rounded-2xl hover:scale-[1.02] transition"
+          >
+
+          <img
+            src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=700&q=80"
+            alt="Chocolate dessert"
+            class="w-full h-56 object-cover rounded-2xl hover:scale-[1.02] transition"
+          >
+
+          <img
+            src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=700&q=80"
+            alt="Ice cream sundae"
+            class="w-full h-56 object-cover rounded-2xl hover:scale-[1.02] transition"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="py-20">
+
+      <div class="max-w-5xl mx-auto px-5">
+
+        <div
+          class="bg-gray-900 rounded-[2rem] text-white text-center p-8 sm:p-12"
+        >
+
+          <div
+            class="w-14 h-14 mx-auto rounded-full bg-pink-600 flex items-center justify-center text-xl"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-5">
+            Get the scoop first 🍦
+          </h2>
+
+          <p class="text-gray-400 mt-3">
+            New flavours, special offers and sweet surprises.
+            Straight to your inbox.
+          </p>
+
+
+          <form
+            id="subscribeForm"
+            class="max-w-lg mx-auto flex flex-col sm:flex-row gap-3 mt-7"
+          >
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+              class="flex-1 px-5 py-3.5 rounded-full bg-white text-gray-900 outline-none"
+            >
+
+            <button
+              type="submit"
+              class="bg-pink-600 px-7 py-3.5 rounded-full font-semibold hover:bg-pink-700 transition"
+            >
+              Subscribe
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="bg-gray-950 text-white">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- Brand -->
+
+        <div>
+
+          <div class="flex items-center gap-2">
+
+            <div
+              class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-ice-cream"></i>
+            </div>
+
+            <span class="logo-font text-2xl">
+              Scooply
+            </span>
+
+          </div>
+
+          <p class="text-gray-400 mt-5 leading-7">
+            Handmade happiness served cold.
+            Find your favourite scoop and make today a little sweeter.
+          </p>
+
+
+          <div class="flex gap-3 mt-6">
+
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Quick Links -->
+
+        <div>
+
+          <h3 class="font-bold text-lg">
+            Explore
+          </h3>
+
+          <div class="flex flex-col gap-3 mt-5 text-gray-400">
+
+            <a href="#home" class="hover:text-white transition">
+              Home
+            </a>
+
+            <a href="#flavours" class="hover:text-white transition">
+              Flavours
+            </a>
+
+            <a href="#offers" class="hover:text-white transition">
+              Offers
+            </a>
+
+            <a href="#about" class="hover:text-white transition">
+              About Us
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Help -->
+
+        <div>
+
+          <h3 class="font-bold text-lg">
+            Help
+          </h3>
+
+          <div class="flex flex-col gap-3 mt-5 text-gray-400">
+
+            <a href="#" class="hover:text-white transition">
+              Delivery
+            </a>
+
+            <a href="#" class="hover:text-white transition">
+              FAQs
+            </a>
+
+            <a href="#" class="hover:text-white transition">
+              Contact Us
+            </a>
+
+            <a href="#" class="hover:text-white transition">
+              Privacy Policy
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Contact -->
+
+        <div>
+
+          <h3 class="font-bold text-lg">
+            Visit Us
+          </h3>
+
+          <div class="space-y-4 mt-5 text-gray-400">
+
+            <p class="flex gap-3">
+              <i class="fa-solid fa-location-dot text-pink-500 mt-1"></i>
+              24 Sweet Street, Chennai
+            </p>
+
+            <p class="flex gap-3">
+              <i class="fa-solid fa-phone text-pink-500 mt-1"></i>
+              +91 84245 70345
+            </p>
+
+            <p class="flex gap-3">
+              <i class="fa-solid fa-clock text-pink-500 mt-1"></i>
+              11:00 AM – 11:00 PM
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="border-t border-gray-800 mt-12 pt-7 text-center text-sm text-gray-500"
+      >
+        © 2026 Scooply. Made with 🍦 and a little bit of love.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= CART MESSAGE ================= -->
+
+  <div
+    id="toast"
+    class="fixed bottom-6 right-5 z-[60] translate-y-20 opacity-0 transition-all duration-300"
+  >
+
+    <div
+      class="bg-gray-900 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3"
+    >
+
+      <div
+        class="w-9 h-9 bg-green-500 rounded-full flex items-center justify-center"
+      >
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <div>
+        <p
+          id="toastMessage"
+          class="font-semibold"
+        >
+          Added to cart!
+        </p>
+
+        <p class="text-xs text-gray-400">
+          Your sweet choice is saved.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* Mobile navigation */
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+
+      mobileMenu.classList.toggle("hidden");
+
+      const icon = menuButton.querySelector("i");
+
+      if (mobileMenu.classList.contains("hidden")) {
+        icon.className = "fa-solid fa-bars";
+      } else {
+        icon.className = "fa-solid fa-xmark";
+      }
+
+    });
+
+
+    /* Close mobile menu after clicking a link */
+
+    document.querySelectorAll(".mobile-link").forEach(link => {
+
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+
+        menuButton.querySelector("i").className =
+          "fa-solid fa-bars";
+      });
+
+    });
+
+
+    /* Shopping cart */
+
+    let cartItems = 0;
+
+    function addToCart(productName) {
+
+      cartItems++;
+
+      document.getElementById("cartCount").textContent =
+        cartItems;
+
+      showToast(productName + " added to cart!");
+
+    }
+
+
+    function showCart() {
+
+      if (cartItems === 0) {
+
+        showToast("Your cart is empty!");
+
+      } else {
+
+        showToast(
+          cartItems + " item" +
+          (cartItems > 1 ? "s" : "") +
+          " in your cart"
+        );
+
+      }
+
+    }
+
+
+    /* Toast notification */
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      const toast = document.getElementById("toast");
+      const toastMessage = document.getElementById("toastMessage");
+
+      toastMessage.textContent = message;
+
+      toast.classList.remove(
+        "translate-y-20",
+        "opacity-0"
+      );
+
+      toast.classList.add(
+        "translate-y-0",
+        "opacity-100"
+      );
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+
+        toast.classList.remove(
+          "translate-y-0",
+          "opacity-100"
+        );
+
+        toast.classList.add(
+          "translate-y-20",
+          "opacity-0"
+        );
+
+      }, 2500);
+
+    }
+
+
+    /* Product filtering */
+
+    function filterProducts(category, clickedButton) {
+
+      const products =
+        document.querySelectorAll(".product-card");
+
+      products.forEach(product => {
+
+        const productCategory =
+          product.dataset.category;
+
+        if (
+          category === "all" ||
+          productCategory === category
+        ) {
+
+          product.style.display = "block";
+
+        } else {
+
+          product.style.display = "none";
+
+        }
+
+      });
+
+
+      /* Change active category */
+
+      document.querySelectorAll(".filter-btn").forEach(button => {
+
+        button.classList.remove(
+          "bg-pink-600",
+          "text-white"
+        );
+
+        button.classList.add(
+          "bg-pink-50",
+          "text-pink-600"
+        );
+
+      });
+
+
+      clickedButton.classList.remove(
+        "bg-pink-50",
+        "text-pink-600"
+      );
+
+      clickedButton.classList.add(
+        "bg-pink-600",
+        "text-white"
+      );
+
+    }
+
+
+    /* Offer button */
+
+    function showOffer() {
+
+      showToast("20% offer applied! 🍦");
+
+    }
+
+
+    /* Newsletter */
+
+    const subscribeForm =
+      document.getElementById("subscribeForm");
+
+    subscribeForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      if (email) {
+
+        showToast("You're on the Scooply list! 🎉");
+
+        subscribeForm.reset();
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
